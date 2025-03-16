@@ -31,7 +31,7 @@ def read_input_file(input_file):
     Args:
         input_file (str/path): text file containing at least one row with three numbers.
 
-    Returns:
+    Return:
         contents (str): contents of text file
     """
     with open(input_file) as f:
@@ -45,7 +45,7 @@ def convert_str_to_list(input, separator=" "):
         input (str): a string to be converted
         separator (str): separator to use when splitting the string, defaulted as space
 
-    Returns:
+    Return:
         input_list (list): result list of the splitted string
     """
     input_list = input.split(separator)
@@ -57,7 +57,7 @@ def create_output_list_with_multiples(rows):
     Args:
         rows (list): list of rows with three numbers
         
-    Returns:
+    Return:
         output_list: list of numbers that counted as multiples
     """
     output_list = []
@@ -75,7 +75,7 @@ def create_list_of_multiples(A, B, C):
     Args:
         A, B, C (str): numbers to use in counting multiples
 
-    Returns:
+    Return:
         multiple_list (list): list containing counted multiples for two number pairs
     """
     multiple_list = []
@@ -89,7 +89,10 @@ def count_multiples(multiple, limit, multiple_list):
     Args:
         multiple (str): the multiple number
         limit (str): the limit of multiples
-        multiple_list (list): list of multiples found
+        multiple_list (list): list of multiples
+
+    Return:
+        multiple_list (list): list of multiples with new multiples found
     """
     multiple = int(multiple)
     limit = int(limit)
@@ -104,7 +107,8 @@ def remove_duplicates_and_sort(numbers):
     Args:
         numbers (list): list to be sorted
     
-        Returns (list): sorted list without duplicates
+    Return: 
+        list(set(numbers)) (list): sorted list without duplicates
     """
     return list(set(numbers))
 
@@ -114,7 +118,7 @@ def format_output(output_list):
     Args:
         output_list (list): list of multiple rows to be formatted
 
-    Returns:
+    Return:
         output_text (str): formatted output
     """
     output_text = ""
@@ -130,7 +134,7 @@ def sort_output_lines(output):
     Args:
         output (str): str containing rows to be sorted
 
-    Returns:
+    Return:
         sorted_output (str): sorted str output of multiples rows
     """
     lines = output.split("\n")
@@ -144,7 +148,7 @@ def number_of_separators(line):
     Args:
         line (str): row of multiples
 
-    Returns:
+    Return:
         len(numbers) (int): length of the numbers on certain row
     """
     parts = line.split(":")
